@@ -22,9 +22,9 @@ namespace MvcOnlineTicariOtomation.Controllers
             ViewBag.mid = mailid;
             var toplamsatis = c.SatisHarekets.Where(x => x.Cariid == mailid).Count();
             ViewBag.toplamsatis = toplamsatis;
-            var toplamtutar = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.ToplamTutar);
+            var toplamtutar = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => (decimal?)y.ToplamTutar);
             ViewBag.toplamtutar = toplamtutar;
-            var toplamUrunSayisi = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.Adet);
+            var toplamUrunSayisi = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => (decimal?)y.Adet);
             ViewBag.toplamurunsayisi = toplamUrunSayisi;
             var adsoyad = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad);
             ViewBag.adsoyad = adsoyad;

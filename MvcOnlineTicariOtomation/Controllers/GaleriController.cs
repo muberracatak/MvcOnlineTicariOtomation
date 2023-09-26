@@ -14,7 +14,8 @@ namespace MvcOnlineTicariOtomation.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var degerler = c.Uruns.ToList();
+            return View(degerler);
         }
     }
 }
